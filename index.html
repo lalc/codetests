@@ -1,17 +1,23 @@
 <form name="submit-to-google-sheet">
-    <input name="email" type="email" placeholder="Email" required>
-    <input name="Name" type="text" placeholder="Name" required>
-    <button type="submit">Send</button>
+  <input name="email" type="email" placeholder="Email" required><br>
+  <input name="Name" type="text" placeholder="Name" required><br>
+  <input name="Monday" type="text" placeholder="Name" required><br>
+  <input name="Tuesday" type="text" placeholder="Name" required><br>
+  <input name="Wednesday" type="text" placeholder="Name" required><br>
+  <input name="Thursday" type="text" placeholder="Name" required><br>
+  <input name="Friday" type="text" placeholder="Name" required><br>
+  <input name="Weekend work" type="text" placeholder="Name" required><br>
+  <button type="submit">Send</button>
 </form>
-  
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxoZ_TOZiAIMoeoG59gRm5V_a49Pq-rzPjem8YVbFlsLGoHmk82xAO1bFdvzEmCVs7ASA/exec'
-    const form = document.forms['submit-to-google-sheet']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxoZ_TOZiAIMoeoG59gRm5V_a49Pq-rzPjem8YVbFlsLGoHmk82xAO1bFdvzEmCVs7ASA/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
